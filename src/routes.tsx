@@ -1,14 +1,22 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home } from './pages/Home';
-import { Geral } from './pages/Geral';
+import { createBrowserRouter } from "react-router-dom";
+import { Layout } from "./components/_layouts/app";
+import { Geral } from "./pages/Geral";
+import { Home } from "./pages/Home";
 
-export function AppRoutes() {
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/geral" element={<Geral />} />
-            </Routes>
-        </Router>
-    );
-}
+
+export const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Layout />,
+        children: [
+            {
+                path: '/',
+                element: <Home />,
+            },
+            {
+                path: '/geral',
+                element: <Geral />,
+            },
+        ],
+    },
+]);

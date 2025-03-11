@@ -1,20 +1,39 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
+import { DefaultTheme, ThemeProvider } from "styled-components";
 
-const theme = {
+const theme: DefaultTheme = {
     colors: {
-        powderWhite: "#FFFDF9",
-        persianGreen: "#06B49A",
-        lightBlue: "#AFDBD2",
-        onyx: "#36313D"
+        background: "#ffffff",
+        foreground: "#0a0a0a",
+
+        card: "#ffffff",
+        cardForeground: "#0a0a0a",
+
+        popover: "#ffffff",
+        popoverForeground: "#0a0a0a",
+
+        primary: "#1a1d2e",
+        primaryForeground: "#f6f8ff",
+
+        secondary: "#eef1f8",
+        secondaryForeground: "#1a1d2e",
+
+        muted: "#eef1f8",
+        mutedForeground: "#6c7380",
+
+        accent: "#eef1f8",
+        accentForeground: "#1a1d2e",
+
+        destructive: "#d93e3e",
+        destructiveForeground: "#f6f8ff",
+
+        border: "#d1d6e0",
+        input: "#d1d6e0",
+        ring: "#0a0a0a",
     },
-    fonts: ["sans-serif", "Roboto"],
-    fontSizes: {
-        small: "1em",
-        medium: "2em",
-        large: "3em"
-    }
+    borderRadius: "0.5rem",
 };
+
 
 interface ThemeProps {
     children: React.ReactNode;
