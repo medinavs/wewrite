@@ -3,6 +3,7 @@ import { Layout } from "./components/_layouts/app";
 import { Home } from "./pages/Home";
 import { Room } from "./pages/Room";
 import { Story } from "./pages/Story";
+import { Vote } from "./pages/Vote";
 
 export const router = createBrowserRouter([
   {
@@ -23,8 +24,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/rooms/:roomId/story/:storyId/vote",
-        // element: <Vote />,
-      }
+        element: <Vote />,
+      },
     ],
   },
 ]);
