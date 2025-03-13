@@ -26,6 +26,10 @@ export const router = createBrowserRouter([
         path: "/rooms/:roomId/story/:storyId/vote",
         element: <Vote />,
       },
+      {
+        path: "/rooms/:roomId/story/:storyId/result",
+        // element: <Result />,
+      },
     ],
   },
 ]);
