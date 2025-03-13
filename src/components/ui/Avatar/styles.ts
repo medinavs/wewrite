@@ -5,16 +5,16 @@ export const Container = styled.div`
     display: flex;
 `
 
-export const Button = styled.button`
+export const Button = styled.button<{ size: "sm" | "lg" }>`
     all: unset;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    width: ${({ size }) => size === "lg" ? "8rem" : "2rem"};
+    height: ${({ size }) => size === "lg" ? "8rem" : "2rem"};
     border-radius: 100%;
     background-color: ${({ theme }) => theme.colors.secondary};
-    cursor: pointer;
+    cursor: ${({ size }) => (size === "lg" ? "none" : "pointer")};
     transition: opacity ease-in-out 0.1s;
 
     &:hover {
@@ -29,19 +29,18 @@ export const AvatarRoot = styled(Avatar.Root)`
     overflow: hidden;
 	border-radius: 100%;
 	background-color: ${({ theme }) => theme.colors.secondary};
-    cursor: pointer;
 `
 
-export const AvatarImage = styled(Avatar.Image)`
-    width: 2rem;
-	height: 2rem;
+export const AvatarImage = styled(Avatar.Image) <{ size: "sm" | "lg" }>`
+    width: ${({ size }) => size === "lg" ? "8rem" : "2rem"};
+	height: ${({ size }) => size === "lg" ? "8rem" : "2rem"};
 	object-fit: cover;
     overflow: hidden;
 `
 
-export const AvatarFallback = styled(Avatar.Fallback)`
-    width: 2rem;
-    height: 2rem;
+export const AvatarFallback = styled(Avatar.Fallback) <{ size: "sm" | "lg" }>`
+    width: ${({ size }) => size === "lg" ? "8rem" : "2rem"};
+    height: ${({ size }) => size === "lg" ? "8rem" : "2rem"};
 	display: flex;
 	align-items: center;
 	justify-content: center;

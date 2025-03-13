@@ -16,7 +16,6 @@ import {
 } from "./styles";
 import { Tabs } from "radix-ui";
 import { Card } from "../../components/ui/Card";
-import { NotificationsPanel } from "../../components/ui/NotificationsPanel";
 
 export function Home() {
   return (
@@ -25,7 +24,7 @@ export function Home() {
       <Section>
         <Title>Welcome to WeWrite</Title>
         <SubTitle>
-          Create and collaborate on stories one line at a time. Join the fun and
+          Create and collaborate on stories. Join the fun and
           let your creativity flow!
         </SubTitle>
       </Section>
