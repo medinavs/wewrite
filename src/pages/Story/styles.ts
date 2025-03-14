@@ -159,7 +159,7 @@ export const CircleProgress = styled.circle.attrs<CircleProgressProps>(
     transform: "rotate(-90) translate(-20)",
   })
 )`
-  stroke: ${({ percentage, theme }) =>
+  stroke: ${({ percentage }) =>
     percentage > 90 ? "#ef4444" : percentage > 75 ? "#f97316" : "#a855f7"};
 `;
 
