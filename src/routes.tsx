@@ -3,9 +3,20 @@ import { Layout } from "./components/_layouts/app";
 import { Home } from "./pages/Home";
 import { Room } from "./pages/Room";
 import { Story } from "./pages/Story";
-import { Vote } from "./pages/Vote";
+import { Result } from "./pages/Result";
+import { Votes } from "./pages/Votes";
+import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
 
 export const router = createBrowserRouter([
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
   {
     path: "/",
     element: <Layout />,
@@ -23,12 +34,12 @@ export const router = createBrowserRouter([
         element: <Story />,
       },
       {
-        path: "/rooms/:roomId/story/:storyId/vote",
-        element: <Vote />,
+        path: "/rooms/:roomId/story/vote",
+        element: <Votes />,
       },
       {
         path: "/rooms/:roomId/story/:storyId/result",
-        // element: <Result />,
+        element: <Result />,
       },
     ],
   },

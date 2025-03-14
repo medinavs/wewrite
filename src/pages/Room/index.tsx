@@ -30,19 +30,19 @@ export function Room() {
         </CardHeader>
         <ParticipantsContainer>
           <ParticipantContainer>
-            <ProfileAvatar size={"lg"} />
+            <ProfileAvatar size={"lg"} imageUrl="" />
             <ParticipantName>Murilao</ParticipantName>
           </ParticipantContainer>
           <ParticipantContainer>
-            <ProfileAvatar size={"lg"} />
+            <ProfileAvatar size={"lg"} imageUrl="" />
             <ParticipantName>Rosildo</ParticipantName>
           </ParticipantContainer>
           <ParticipantContainer>
-            <ProfileAvatar size={"lg"} />
+            <ProfileAvatar size={"lg"} imageUrl="" />
             <ParticipantName>Mandioco</ParticipantName>
           </ParticipantContainer>
           <ParticipantContainer>
-            <ProfileAvatar size={"lg"} />
+            <ProfileAvatar size={"lg"} imageUrl="" />
             <ParticipantName>mulekao</ParticipantName>
           </ParticipantContainer>
         </ParticipantsContainer>

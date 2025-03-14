@@ -1,18 +1,25 @@
-import { AvatarFallback, AvatarImage, AvatarRoot, Button, Container } from "./styles";
+import {
+  AvatarFallback,
+  AvatarImage,
+  AvatarRoot,
+  Button,
+  Container,
+} from "./styles";
 
 interface ProfileAvatarProps {
-    size: "sm" | "lg";
+  size: "sm" | "lg";
+  imageUrl: string;
 }
 
-export function ProfileAvatar({ size }: ProfileAvatarProps) {
-    return (
-        <Container>
-            <Button size={size}>
-                <AvatarRoot>
-                    <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" size={size} />
-                    <AvatarFallback size={size} />
-                </AvatarRoot>
-            </Button>
-        </Container>
-    )
+export function ProfileAvatar({ size, imageUrl }: ProfileAvatarProps) {
+  return (
+    <Container>
+      <Button size={size}>
+        <AvatarRoot>
+          <AvatarImage src={imageUrl} size={size} />
+          <AvatarFallback size={size} />
+        </AvatarRoot>
+      </Button>
+    </Container>
+  );
 }
