@@ -5,13 +5,7 @@ import { useState } from "react";
 import { signUp } from "../../http/auth-sign-up";
 import { useNavigate } from "react-router-dom";
 import { showToast } from "../../components/ui/Toast";
-
-const avatarOptions = [
-  "https://api.dicebear.com/9.x/thumbs/svg?seed=Jocelyn",
-  "https://api.dicebear.com/9.x/thumbs/svg?seed=Christian",
-  "https://api.dicebear.com/9.x/thumbs/svg?seed=Destiny",
-  "https://api.dicebear.com/9.x/thumbs/svg?seed=Ryker",
-];
+import { avatarOptions } from "./options";
 
 const RegisterFormSchema = z.object({
   name: z.string().min(3),

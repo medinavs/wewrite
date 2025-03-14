@@ -65,6 +65,11 @@ export const ParticipantsContainer = styled.div`
   width: 100%;
   gap: 1rem;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    padding: 1.5rem;
+    flex-direction: column;
+  }
 `;
 
 export const ParticipantContainer = styled.div`
@@ -137,4 +142,8 @@ export const Footer = styled.footer`
   justify-content: space-between;
   align-items: center;
   margin-top: 3rem;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 2rem;
+  }
 `;

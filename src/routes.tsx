@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
         element: <Votes />,
       },
       {
-        path: "/rooms/:roomId/story/:storyId/result",
+        path: "/rooms/:roomId/results",
         element: <Result />,
       },
     ],

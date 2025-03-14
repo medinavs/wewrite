@@ -8,6 +8,10 @@ export interface Room {
   theme: string;
   stage: RoomStage;
   users: User[];
+  votes: { [key: string]: string } | null;
+  finished_participants: User[];
+  writing_start_time: string | null;
+  vote_start_time: string | null;
   started_at: string | null;
   created_at: string;
 }
@@ -15,8 +19,9 @@ export interface Room {
 export enum RoomStage {
   WAITING = "WAITING",
   WRITING = "WRITING",
-  REVIEWING = "REVIEWING",
-  COMPLETED = "COMPLETED",
+  VOTING = "VOTING",
+  RESULTS = "RESULTS",
+  FINISHED = "FINISHED",
 }
 
 /**
@@ -28,6 +33,7 @@ export async function getRooms(): Promise<Room[]> {
     const { data, error } = await client
       .from("rooms")
       .select("*")
+      .eq("stage", RoomStage.WAITING)
       .order("created_at", { ascending: false });
 
     if (error) {
@@ -35,7 +41,7 @@ export async function getRooms(): Promise<Room[]> {
       return [];
     }
 
-    return data as Room[];
+    return data || [];
   } catch (err: any) {
     console.error("Unexpected error in getRooms:", err.message);
     return [];
@@ -124,8 +130,6 @@ export async function getRoomById(roomId: string): Promise<Room | null> {
  */
 export async function getRoomsByParticipant(userId: string): Promise<Room[]> {
   try {
-    // This assumes users array contains user IDs or objects with an id property
-    // Adjust the query based on your actual data structure
     const { data, error } = await client
       .from("rooms")
       .select("*")

@@ -30,22 +30,6 @@ export const ActionsContainer = styled.div`
   gap: 0.875rem;
 `;
 
-// export const NotificationButton = styled.button`
-//   all: unset;
-//   width: 2.25rem;
-//   height: 2.25rem;
-//   cursor: pointer;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   border-radius: ${({ theme }) => theme.borderRadius};
-//   transition: background ease-in-out 0.1s;
-
-//   &:hover {
-//     background-color: ${({ theme }) => theme.colors.accent};
-//   }
-// `;
-
 export const MenuButton = styled.button`
   all: unset;
 `;

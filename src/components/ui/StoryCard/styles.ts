@@ -72,3 +72,9 @@ export const ExpandButton = styled.button`
   all: unset;
   margin-bottom: 0.5rem;
 `;
+
+export const VotersContainer = styled.div`
+  display: flex;
+  gap: 4px;
+  margin-left: 8px;
+`;

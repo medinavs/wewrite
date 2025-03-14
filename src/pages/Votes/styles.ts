@@ -65,6 +65,10 @@ export const ParticipantsContainer = styled.div`
   width: 100%;
   gap: 1rem;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const ParticipantContainer = styled.div`
@@ -83,7 +87,7 @@ export const ParticipantName = styled.span`
 export const WritersCount = styled.div`
   border-radius: 0.375rem;
   border: 1px solid transparent;
-  padding: 0.125rem 0.625rem;
+  padding: 0.325rem 0.625rem;
   font-size: 0.75rem;
   font-weight: 600;
   transition: background-color 0.2s, color 0.2s;

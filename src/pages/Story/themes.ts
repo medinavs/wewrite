@@ -1,0 +1,17 @@
+export const themes = [
+  "Uma aventura no espaço",
+  "O dia em que os animais falaram",
+  "A cidade submersa",
+  "O último dragão",
+  "A chave para outro mundo",
+  "Uma viagem no tempo",
+  "O maior tesouro",
+  "A floresta encantada",
+  "O portal misterioso",
+  "O robô com sentimentos",
+  "Joao Bananao e o pe de feijao",
+  "A ilha desconhecida",
+  "Um mundo sem cores",
+  "O guardião das estrelas",
+  "A máquina do tempo quebrada",
+];

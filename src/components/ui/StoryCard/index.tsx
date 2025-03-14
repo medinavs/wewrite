@@ -1,4 +1,4 @@
-import { Clock, Maximize2 } from "lucide-react";
+import { Maximize2 } from "lucide-react";
 import {
   AvatarsContainer,
   Container,
@@ -8,23 +8,24 @@ import {
   Header,
   Text,
   Title,
-  TitleContainer,
 } from "./styles.ts";
 import { ProfileAvatar } from "../Avatar/index.tsx";
 import { LikeButton } from "../LikeButton/index.tsx";
 import { StoryModal } from "../StoryModal/index.tsx";
+import { User } from "../../../http/get-user.ts";
 
 interface StoryCardProps {
   story: {
-    id: number;
+    id: string;
     author: string;
     content: string;
   };
   isLiked: boolean;
+  voters: User[];
   onLike: () => void;
 }
 
-export function StoryCard({ story, isLiked, onLike }: StoryCardProps) {
+export function StoryCard({ story, isLiked, voters, onLike }: StoryCardProps) {
   return (
     <Container>
       <Header>
@@ -40,7 +41,13 @@ export function StoryCard({ story, isLiked, onLike }: StoryCardProps) {
       </Content>
       <Footer>
         <AvatarsContainer>
-          <ProfileAvatar size="sm" imageUrl={""} />
+          {voters.map((voter, index) => (
+            <ProfileAvatar
+              key={index}
+              size="sm"
+              imageUrl={voter.avatar ?? ""}
+            />
+          ))}
         </AvatarsContainer>
         <LikeButton event={onLike} initialLiked={isLiked} />
       </Footer>

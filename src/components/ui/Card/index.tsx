@@ -1,43 +1,69 @@
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
 import { Clock, Users } from "lucide-react";
-import {
-  AvatarsContainer,
-  Container,
-  Footer,
-  Header,
-  SubTitle,
-  Title,
-  WritersCount,
-} from "./styles";
 import { ProfileAvatar } from "../Avatar";
+import {
+  CardFooter,
+  UsersList,
+  UserCount,
+  CardContent,
+  CardTitle,
+  TimeStamp,
+  Container,
+} from "./styles";
 
-interface CardProps {
-  title: string;
-  created_at: string;
-  users: [{ avatar: string }];
+interface UserProps {
+  avatar: string;
 }
 
-export function RoomCard({ title, created_at, users }: CardProps) {
-  return (
-    <Container>
-      <Header>
-        <Title>{title}</Title>
-        <SubTitle>
-          <Clock size={14} />
-          <span>{created_at}</span>
-        </SubTitle>
-      </Header>
+interface RoomCardProps {
+  id: string;
+  title: string;
+  created_at: string;
+  users: UserProps[];
+  onClick?: (id: string) => void;
+}
 
-      <Footer>
-        <AvatarsContainer>
-          {users.map((user) => (
-            <ProfileAvatar size="sm" imageUrl={user.avatar} />
+export function RoomCard({
+  id,
+  title,
+  created_at,
+  users,
+  onClick,
+}: RoomCardProps) {
+  const formatDate = (date: string) => {
+    return formatDistanceToNow(new Date(date), {
+      addSuffix: true,
+      locale: ptBR,
+    });
+  };
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick(id);
+    }
+  };
+
+  return (
+    <Container onClick={handleClick}>
+      <CardContent>
+        <CardTitle>{title}</CardTitle>
+        <TimeStamp>
+          <Clock size={14} />
+          {formatDate(created_at)}
+        </TimeStamp>
+      </CardContent>
+      <CardFooter>
+        <UsersList>
+          {users.slice(0, 3).map((user, index) => (
+            <ProfileAvatar key={index} imageUrl={user.avatar} size="sm" />
           ))}
-        </AvatarsContainer>
-        <WritersCount>
+        </UsersList>
+        <UserCount>
           <Users size={12} />
-          <span>{users.length} / 4</span>
-        </WritersCount>
-      </Footer>
+          <span>{users.length}/4</span>
+        </UserCount>
+      </CardFooter>
     </Container>
   );
 }

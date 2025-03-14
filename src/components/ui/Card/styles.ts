@@ -27,13 +27,13 @@ export const Header = styled.header`
     padding-bottom: 0.5rem;
 `
 
-export const Title = styled.h3`
+export const CardTitle = styled.h3`
     font-weight: 600;
     letter-spacing: -0.01562em;
     font-size: 1.125rem;
 `
 
-export const SubTitle = styled.p`
+export const TimeStamp = styled.p`
     color: ${({ theme }) => theme.colors.mutedForeground};
     display: flex;
     align-items: center;
@@ -41,9 +41,8 @@ export const SubTitle = styled.p`
     gap: 0.25rem;
 `
 
-export const Content = styled.div`
-    padding: 1.5rem;
-    padding-top: 0;
+export const CardContent = styled.div`
+    padding: 1rem 1.5rem;
     flex-grow: 1;
     overflow: hidden;
 `
@@ -56,7 +55,7 @@ export const Text = styled.p`
     overflow: hidden;
 `
 
-export const Footer = styled.footer`
+export const CardFooter = styled.footer`
     padding: 1.5rem;
     padding-top: 0.5rem;
     display: flex;
@@ -64,7 +63,7 @@ export const Footer = styled.footer`
     align-items: center;
 `
 
-export const AvatarsContainer = styled.div`
+export const UsersList = styled.div`
     display: flex;
     margin-right: -0.5rem;
 
@@ -73,7 +72,7 @@ export const AvatarsContainer = styled.div`
     }
 `
 
-export const WritersCount = styled.div`
+export const UserCount = styled.div`
     border-radius: 0.375rem;
     border: 1px solid transparent;
     padding: 0.125rem 0.625rem;

@@ -14,7 +14,7 @@ export interface User {
  */
 export async function getUser(): Promise<User | null> {
   try {
-    // Get the currently authenticated user
+    // get the currently authenticated user
     const { data: authData } = await client.auth.getUser();
 
     if (!authData?.user) {
@@ -35,7 +35,7 @@ export async function getUser(): Promise<User | null> {
 
     return {
       ...data,
-      id: authData.user,
+      id: authData.user.id,
     };
   } catch (err: any) {
     console.error("Unexpected error in getUser:", err.message);
