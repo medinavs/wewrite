@@ -129,7 +129,7 @@ export function Home() {
           <Title>Bem vindo {currentUser?.name} ao WeWrite</Title>
         )}
         <SubTitle>
-          Crie e colabore em histórias. Se junte a diversão e deixe sua
+          Crie e desafie amigos com histórias. Se junte a diversão e deixe sua
           criatividade fluir!
         </SubTitle>
       </Section>
