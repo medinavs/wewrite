@@ -15,7 +15,7 @@ import {
   StorysGrid,
 } from "./styles";
 import { Tabs } from "radix-ui";
-import { RoomCard } from "../../components/ui/Card";
+import { RoomCard } from "../../components/ui/RoomCard";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../http/get-user";
