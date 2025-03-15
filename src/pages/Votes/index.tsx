@@ -269,7 +269,7 @@ export function Votes() {
               payload.new.votes.length >= payload.new.users.length) ||
             payload.new.stage === "RESULTS"
           ) {
-            navigate(`/rooms/${roomId}/story/results`);
+            navigate(`/rooms/${roomId}/results`);
           }
         }
       )
