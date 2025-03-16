@@ -33,6 +33,7 @@ import { showToast } from "../../components/ui/Toast";
 import { Modal } from "../../components/ui/Modal";
 import { format } from "date-fns";
 import { themes } from "./themes";
+import { getRandomTheme } from "../../http/get-random-theme";
 
 const WRITING_DURATION = 120; // 2 minutes
 
@@ -73,6 +74,18 @@ export function Story() {
     try {
       const room = await getRoomById(roomId as string);
       if (room && !room.theme) {
+        // add this back when OpenAI API is working
+        // const { response } = await getRandomTheme();
+
+        // if (!response) {
+        //   console.error("Error getting random theme");
+        //   return;
+        // }
+
+        // const randomTheme = response;
+
+        // setTheme(randomTheme);
+
         const randomTheme = themes[Math.floor(Math.random() * themes.length)];
 
         // update theme and set writing_start_time in the database

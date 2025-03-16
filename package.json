@@ -21,6 +21,7 @@
     "@tiptap/pm": "^2.11.5",
     "@tiptap/react": "^2.11.5",
     "@tiptap/starter-kit": "^2.11.5",
+    "axios": "^1.8.3",
     "bootstrap": "^5.3.3",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.5.0",
