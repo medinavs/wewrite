@@ -33,7 +33,6 @@ import { showToast } from "../../components/ui/Toast";
 import { Modal } from "../../components/ui/Modal";
 import { format } from "date-fns";
 import { themes } from "./themes";
-import { getRandomTheme } from "../../http/get-random-theme";
 
 const WRITING_DURATION = 120; // 2 minutes
 
